@@ -12,8 +12,6 @@ int precedence(char op) {
         return 2;
     else if (op == '+' || op == '-')
         return 1;
-    else
-        return -1;
 }
 
 double precedenceOp(double a, double b, char op) {
