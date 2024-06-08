@@ -31,7 +31,7 @@ double Expression(string expression) {
     stack<double> values;
     stack<char> ops;
 
-    for (int i = 0; i < expression.length(); i++) {
+    for (int i = 0; i < expression.size(); i++) {
         if (expression[i] == ' ')
             continue;
 
