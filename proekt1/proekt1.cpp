@@ -12,6 +12,8 @@ int precedence(char op) {
         return 2;
     else if (op == '+' || op == '-')
         return 1;
+    else
+        return -1;
 }
 
 double precedenceOp(double a, double b, char op) {
@@ -97,7 +99,7 @@ int main()
 {
     setlocale(0, "rus");
     string expression;
-
+    cout << "Введите выражение: ";
     getline(cin, expression);
 
     double result = Expression(expression);
