@@ -62,24 +62,24 @@ double Expression(string expression) {
             }
             ops.pop();
         }
-        else {
+        else { // выполнение обработки операторов с учетом их приоритета.
             while (!ops.empty() && precedence(ops.top()) >= precedence(expression[i])) {
-                double val2 = values.top();
-                values.pop();
+                double val2 = values.top(); 
+                values.pop();   // получаем верхний операнд из стека значений и удаляем его из стека.
 
-                double val1 = values.top();
-                values.pop();
+                double val1 = values.top(); 
+                values.pop(); // получаем следующий операнд из стека значений и удаляем его.
 
                 char op = ops.top();
-                ops.pop();
+                ops.pop(); // получаем верхний оператор из стека операторов и удаляем его из стека.
 
-                values.push(precedenceOp(val1, val2, op));
+                values.push(precedenceOp(val1, val2, op)); // применяем оператор Op к операндам val1 и val2.
             }
-            ops.push(expression[i]);
+            ops.push(expression[i]); // помещаем оператор expression[i] в стек операторов.
         }
     }
 
-    while (!ops.empty()) {
+    while (!ops.empty()) { // окончательное вычисление оставшихся операций и операндов.
         double val2 = values.top();
         values.pop();
 
