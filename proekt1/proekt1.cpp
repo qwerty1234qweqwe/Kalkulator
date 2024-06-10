@@ -40,7 +40,7 @@ double Expression(string expression) {
         }
         else if (isdigit(expression[i])) {
             double val = 0;
-            while (i < expression.length() && isdigit(expression[i])) {
+            while (i < expression.size() && isdigit(expression[i])) {
                 val = val * 10 + (expression[i] - '0');
                 i++;
             }
